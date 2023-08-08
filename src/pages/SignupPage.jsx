@@ -1,14 +1,29 @@
+import { useNavigate } from "react-router-dom";
 import Form from "../components/molecules/Form.jsx";
 import Input from "../components/styles/Input.js";
 import SignTemplate from "../components/templates/SignTemplate.jsx";
 import useForm from "../hooks/useForm.jsx";
+import api from "../services/api.js";
+
 
 export default function SignupPage() {
-    const { form, handleForm } = useForm({ name: "", email: "", password: "", confirm: "" });
+    const navigate = useNavigate();
+    const { form, handleForm } = useForm({ name: "", email: "", password: "", confirmPassword: "" });
+
+    function handleSubmit(e) {
+        e.preventDefault();
+
+        api.signup(form)
+            .then(() => {
+                alert("Cadastro realizado com sucesso!");
+                navigate("/login");
+            })
+            .catch((err) => alert(err.response.data));
+    }
 
     return (
         <SignTemplate>
-            <Form textButton="Criar Conta">
+            <Form textButton="Criar Conta" onSubmit={handleSubmit}>
                 <Input
                     name="name"
                     type="text"
@@ -34,10 +49,10 @@ export default function SignupPage() {
                     required
                 />
                 <Input
-                    name="confirm"
+                    name="confirmPassword"
                     type="password"
                     placeholder="Confirmar senha"
-                    value={form.confirm}
+                    value={form.confirmPassword}
                     onChange={handleForm}
                     required
                 />
