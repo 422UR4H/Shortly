@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import Header from "../atoms/Header.jsx";
 import Logo from "../atoms/Logo.jsx";
 import Ranking from "../atoms/Ranking.jsx";
-import useToken from "../../hooks/useToken.jsx";
+import useToken from "../../hooks/useToken.js";
 
 export default function RankingTemplate() {
     const { token } = useToken();

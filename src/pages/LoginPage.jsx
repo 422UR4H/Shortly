@@ -2,8 +2,8 @@ import { useNavigate } from "react-router-dom";
 import Form from "../components/molecules/Form.jsx";
 import Input from "../components/styles/Input.js";
 import SignTemplate from "../components/templates/SignTemplate.jsx";
-import useForm from "../hooks/useForm.jsx";
-import useToken from "../hooks/useToken.jsx";
+import useForm from "../hooks/useForm.js";
+import useToken from "../hooks/useToken.js";
 import api from "../services/api.js";
 
 

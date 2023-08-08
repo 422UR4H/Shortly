@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
-import useToken from "../../hooks/useToken.jsx";
+import useToken from "../../hooks/useToken.js";
 
 export default function Header() {
     const { token, logout } = useToken();

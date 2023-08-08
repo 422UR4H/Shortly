@@ -1,5 +1,4 @@
-import useToken from "../hooks/useToken.jsx";
-import Ranking from "../components/atoms/Ranking.jsx";
+import useToken from "../hooks/useToken.js";
 import DashboardTemplate from "../components/templates/DashboardTemplate.jsx";
 import RankingTemplate from "../components/templates/RankingTemplate.jsx";
 
